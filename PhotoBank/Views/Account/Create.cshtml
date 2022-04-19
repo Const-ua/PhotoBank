@@ -1,0 +1,84 @@
+﻿@model PhotoBank.Models.User
+
+@{
+    var title = "Create user";
+}
+<form method="post" enctype="multipart/form-data">
+    @if (!String.IsNullOrEmpty(Model.Id))
+    {
+        <input asp-for="Id" hidden/>
+        <input asp-for="Email" hidden/>
+        title = "Edit user";
+    }
+    <div class="border p-3">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="row">
+            <h2 class="text-info pl-3">@title</h2>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="row mb-3">
+                    <div class="col-4">
+                        <label>First name</label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="FirstName" class="form-control"/>
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4">
+                        <label>Last name</label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="LastName" class="form-control"/>
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div v class="form-group row mb-3">
+                    <div class="col-4">
+                        <label>Address</label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Address" class="form-control"/>
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                </div>
+                <div v class="form-group row mb-3">
+                    <div class="col-4">
+                        <label>Phone</label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Phone" class="form-control"/>
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                </div>
+                <div v class="form-group row mb-3">
+                    <div class="col-8 form-check offset-5">
+                        <a asp-action="ChangePassword" asp-controller="account" asp-route-id="@Model.Id">Change password</a>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+                            @if (!String.IsNullOrEmpty(Model.Id))
+                            {
+                                //Update 
+                                <input type="submit" class="btn btn-info w-100" value="Updte"/>
+                            }
+                            else
+                            {
+                                //Create 
+                                <input type="submit" class="btn btn-primary w-100" value="Create"/> @*onclick="validateInput()"*@
+                            }
+                        </div>
+                        <div class="col">
+                            <a asp-controller="Account" asp-action="Index" class="btn btn-success w-100">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

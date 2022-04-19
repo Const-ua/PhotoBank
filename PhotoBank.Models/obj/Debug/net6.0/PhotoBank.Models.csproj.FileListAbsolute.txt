@@ -1,0 +1,12 @@
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Models\obj\Debug\net6.0\PhotoBank.Models.csproj.AssemblyReference.cache
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Models\obj\Debug\net6.0\PhotoBank.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Models\obj\Debug\net6.0\PhotoBank.Models.AssemblyInfoInputs.cache
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Models\obj\Debug\net6.0\PhotoBank.Models.AssemblyInfo.cs
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Models\obj\Debug\net6.0\PhotoBank.Models.csproj.CoreCompileInputs.cache
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Models\bin\Debug\net6.0\PhotoBank.Models.deps.json
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Models\bin\Debug\net6.0\PhotoBank.Models.dll
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Models\bin\Debug\net6.0\PhotoBank.Models.pdb
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Models\obj\Debug\net6.0\PhotoBank.Models.dll
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Models\obj\Debug\net6.0\refint\PhotoBank.Models.dll
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Models\obj\Debug\net6.0\PhotoBank.Models.pdb
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Models\obj\Debug\net6.0\ref\PhotoBank.Models.dll

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<PhotoBank.Models.Photo>
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">Welcome to Photo Bank</h1>
+    </div>
+    <br />
+    <div class="text-center">
+        @if (Model.Count() > 0)
+        {
+            <div class="row">
+                @foreach (var photo in Model)
+                {
+                    <partial name="_PhotoCard" model="photo" />
+                }
+            </div>
+
+        }
+        else
+        {
+            <h2>There are no photo yet.</h2>
+        }
+    </div>
+</div>
+<script>
+
+    function addToCart(id) {
+        $.ajax({
+            url: '/Cart/AddToCart/' + id,
+            type: 'POST',
+            data: JSON.stringify(id),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            complete: function(response) {
+                if (response.responseJSON == '-1') {
+                    var url = "/Account/Login";
+                    $(location).attr('href',url);
+                }
+                else
+                    itemsCounter.innerHTML = ' (' + response.responseJSON+')';
+            }
+        });
+
+
+    }
+</script>

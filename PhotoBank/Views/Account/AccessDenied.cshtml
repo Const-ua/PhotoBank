@@ -1,0 +1,13 @@
+﻿@model string
+
+<h2> Access denied</h2>
+@if (Model == "/Photo/Create")
+{
+    <h1> To upload photos you must register as Author</h1>
+    <a asp-controller="Home" asp-action="Index">Home</a>
+}
+else
+{
+    <a asp-controller="Account" asp-action="Login">Login</a>
+    <a asp-controller="Home" asp-action="Index">Home</a>
+}

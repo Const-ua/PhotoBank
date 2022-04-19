@@ -1,0 +1,17 @@
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\bin\Release\net6.0\PhotoBank.Data.deps.json
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\bin\Release\net6.0\PhotoBank.Data.runtimeconfig.json
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\bin\Release\net6.0\PhotoBank.Data.dll
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\bin\Release\net6.0\PhotoBank.Data.pdb
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\bin\Release\net6.0\PhotoBank.Models.dll
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\bin\Release\net6.0\PhotoBank.Models.pdb
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\obj\Release\net6.0\PhotoBank.Data.csproj.AssemblyReference.cache
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\obj\Release\net6.0\PhotoBank.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\obj\Release\net6.0\PhotoBank.Data.AssemblyInfoInputs.cache
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\obj\Release\net6.0\PhotoBank.Data.AssemblyInfo.cs
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\obj\Release\net6.0\PhotoBank.Data.csproj.CoreCompileInputs.cache
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\obj\Release\net6.0\PhotoBank.Data.csproj.CopyComplete
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\obj\Release\net6.0\PhotoBank.Data.dll
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\obj\Release\net6.0\refint\PhotoBank.Data.dll
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\obj\Release\net6.0\PhotoBank.Data.pdb
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\obj\Release\net6.0\PhotoBank.Data.genruntimeconfig.cache
+D:\Work\C#\PhotoBank\PhotoBank\PhotoBank.Data\obj\Release\net6.0\ref\PhotoBank.Data.dll

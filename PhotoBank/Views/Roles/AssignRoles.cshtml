@@ -1,0 +1,34 @@
+﻿@using PhotoBank.Data
+@model PhotoBank.ViewModels.AssignRolesVM
+@inject PbContext _db
+
+@{
+    var user = _db.Users.Find(Model.Id);
+    string email = user.Email;
+    string fullName = user.FirstName + " " + user.LastName;
+}
+<input type="text" asp-for="Id" hidden="" />
+<input type="text" asp-for="Email" hidden="" />
+<h2>Assign roles to user </h2>
+<ul>
+    <li><b>Email: </b>@email</li>
+    <li><b>Name: </b>@fullName</li>
+</ul>
+<form method="post" asp-action="AssignRoles">
+    <div class="border p-3 col-4">
+        <div class="form-check">
+            @foreach (var role in Model.AllRoles)
+            {
+                <input type="checkbox" name="roles" value="@role.Name"
+                       @(Model.UserRoles.Contains(role.Name) ? "checked=\"checked\"" : "")  class="form-check-input"  />
+
+                @role.Name
+                <br />
+            }
+        </div>
+            <br />
+            <br />
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a asp-action="Index" class="btn btn-primary">Back</a>
+    </div>
+</form>

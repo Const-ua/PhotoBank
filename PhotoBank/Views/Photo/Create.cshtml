@@ -1,0 +1,122 @@
+﻿@model PhotoBank.ViewModels.PhotoVM
+@{
+    var title = "Add photo to bank";
+}
+<form method="post" asp-action="Create" asp-controller="Photo" enctype="multipart/form-data">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    @if (!@String.IsNullOrEmpty(Model.Photo.Id.ToString()) && Model.Photo.Id.ToString() != "00000000-0000-0000-0000-000000000000")
+    {
+        <input asp-for="Photo.Id" hidden />
+        title = "Edit photo";
+    }
+    <div class="border p-3">
+        <div class="row">
+            <h2 class="text-info pl-3">@title</h2>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div v class="row">
+                    <div v class="row mb-3">
+                        <div class="col-4">
+                            Im age
+                        </div>
+                        <div class="col-8">
+                            <input type="file" name="File" id="uploadBox" multiple class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <label>Name</label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Photo.Name" class="form-control" id="photoName" />
+                            <span asp-validation-for="Photo.Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <label>Description</label>
+                        </div>
+                        <div class="col-8">
+                            <textarea asp-for="Photo.Description" class="form-control" id="photoDescription"></textarea>
+                            <span asp-validation-for="Photo.Description" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <label>Price</label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Photo.Price" class="form-control" id="photoPrice" />
+                            <span asp-validation-for="Photo.Price" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div v class="row mb-3">
+                        <div class="col-4">
+                            <label>Category</label>
+                        </div>
+                        <div class="col-8">
+                            <select asp-for="Photo.CategoryId" asp-items="@Model.Categories" class="form-control" id="photoCategory">
+                            </select>
+                            <span asp-validation-for="Photo.CategoryId" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+
+                            @if (!@String.IsNullOrEmpty(Model.Photo.Id.ToString()) && Model.Photo.Id.ToString() != "00000000-0000-0000-0000-000000000000")
+                            {
+                            //Update photo
+
+                                <input type="submit" class="btn btn-primary w-100" value="Update" />
+
+                            }
+                            else
+                            {
+                                //Add product
+                                <input type="submit" class="btn btn-primary w-100" value="Create" onclick="validateInput()" />
+
+                            }
+                        </div>
+                        <div class="col">
+                            <a asp-controller="Photo" asp-action="Index" class="btn btn-primary w-100">
+                                Back
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                @if (!@String.IsNullOrEmpty(Model.Photo.Id.ToString()) && Model.Photo.Id.ToString() != "00000000-0000-0000-0000-000000000000")
+                {
+                    <img src="@WebConstants.PreviewPath@Model.Photo.Preview" style="border-radius: 5px; border: 1px solid #bbb" />
+                }
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts
+{
+    @{
+    <partial name="_ValidationScriptsPartial" />
+    }
+<script>
+    function validateInput() {
+        if (document.getElementById("uploadBox").value === "") {
+            Swal.fire(
+                'Error!',
+                'Please upload an Image!',
+                'error'
+            );
+            return false;
+        }
+        return true;
+    }
+</script>
+}

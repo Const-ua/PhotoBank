@@ -1,0 +1,85 @@
+﻿@model PhotoBank.ViewModels.PhotoVM
+@{
+    var title = "Delete photo to bank";
+}
+@Model.Photo.Id.ToString()
+<form method="post" asp-action="Delete" enctype="multipart/form-data">
+    <input asp-for="Photo.Id" hidden />
+    title = "Edit photo";
+    <div class="border p-3">
+        <div class="row">
+            <h2 class="text-info pl-3">@title</h2>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div v class="row">
+                    <div v class="row">
+                        <div class="col-4">
+                            Image
+                        </div>
+                        <div class="col-8">
+                            <input type="file" name="File" id="uploadBox" multiple class="form-control" disabled="disabled" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <label>Name</label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Photo.Name" class="form-control" disabled="disabled" />
+                            <span asp-validation-for="Photo.Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <label>Description</label>
+                        </div>
+                        <div class="col-8">
+                            <textarea asp-for="Photo.Description" class="form-control summernote" disabled="disabled"></textarea>
+                            <span asp-validation-for="Photo.Description" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <label>Price</label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Photo.Price" class="form-control" disabled="disabled" />
+                            <span asp-validation-for="Photo.Price" class="text-danger"></span>
+                        </div>
+                    </div>
+                    </div>
+                    <div v class="row mb-3">
+                        <div class="col-4">
+                            <label>Category</label>
+                        </div>
+                        <div class="col-8">
+                            <select asp-for="Photo.CategoryId" asp-items="@Model.Categories" class="form-control" disabled="disabled">
+                                <option disabled selected>--Select category--</option>
+                            </select>
+                            <span asp-validation-for="Photo.CategoryId" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-danger w-100" value="Delete" />
+                        </div>
+                        <div class="col">
+                            <a asp-controller="Photo" asp-action="Index" class="btn btn-success w-100">
+                                Back
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <img src="@WebConstants.PreviewPath@Model.Photo.Preview" style="border-radius: 5px; border: 1px solid #bbb" />
+            </div>
+        </div>
+    </div>
+</form>

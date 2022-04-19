@@ -1,0 +1,90 @@
+﻿@model PhotoBank.ViewModels.RegisterVM
+
+<form method="post" asp-action="Register">
+    <div asp-validation-summary="All"></div>
+    <h1>To upload photos register as author.</h1>
+    <div class="border p-3">
+        <div class="row">
+            <div class="col-8">
+                <div class="row mb-3  g-3 align-items-center">
+                    <div class="col-3">
+                        <label for="Email" class="form-label">Email address</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" asp-for="Email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-3">
+                        <label for="Password" class="form-label">Password</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="password" class="form-control" id="Password" asp-for="Password">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-3">
+                        <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="password" class="form-control" id="ConfirmPassword" asp-for="ConfirmPassword">
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-3">
+                        <label for="FirstName" class="form-label">FirstName</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" class="form-control" id="FirstName" asp-for="FirstName">
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-3">
+                        <label for="LastName" class="form-label">LastName</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" class="form-control" id="LastName" asp-for="LastName">
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-3">
+                        <label for="Address" class="form-label">Address</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" class="form-control" id="Address" asp-for="Address">
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-3">
+                        <label for="Phone" class="form-label">Phone</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" class="form-control" id="Phone" asp-for="Phone">
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row form-check mb-3">
+                    <div class="col-8 form-check offset-3">
+                        @Html.CheckBoxFor(m => Model.IsAuthor)
+                        <label class="form-check-label" for="IsAuthor"> Register as author </label>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <a class="btn btn-primary">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

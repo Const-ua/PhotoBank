@@ -1,0 +1,82 @@
+﻿@model IEnumerable<PhotoBank.Models.Cart>
+
+@if (Model.Count() > 0)
+{
+    <table>
+        <tr>
+            <th>Picture</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+        <tbody>
+            @{
+                double total = 0.00;
+                int count = 0;
+            }
+            @foreach (var photo in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="@WebConstants.PreviewPath@photo.Photo.Preview" alt="@photo.Photo.Name" width="50%" height="50%" />
+                    </td>
+                    <td>@photo.Photo.Name</td>
+                    <td>@photo.Photo.Description</td>
+                    <td>@photo.Photo.Price</td>
+                    <td>
+                        <a asp-controller="Cart" asp-action="Delete" asp-route-id="@photo.Id"><i class="fa-solid fa-trash-can"></i></a>
+                    </td>
+                </tr>
+                total += @photo.Photo.Price;
+                count++;
+            }
+            <tr><td></td><td><h2>Total: <b>@total</b></h2></td></tr>
+        </tbody>
+    </table>
+    <hl />
+    @if (count > 1)
+    {
+        <button id="sendButton" onclick="completeOrder()" class="btn btn-primary" asp-action="SendMail">
+            Order @count photos
+        </button>
+    }
+    else
+    {
+        <button id="sendButton" onclick="completeOrder()" class="btn btn-primary" asp-action="SendMail" type="button">
+            Order @count photo
+        </button>
+    }
+}
+else
+{
+    <h1>You shopping cart is empty.</h1>
+}
+
+<script>
+
+        function completeOrder() {
+      //      $('#spinner').addClass('spinner-border');
+    //        $('#spinner').addClass('spinner-border-sm');
+            $('#sendButton').html('<span id="spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Sending mail...');
+            $('#sendButton').prop( "disabled", true );
+
+
+
+            $.ajax({
+                url: '/Cart/SendMail',
+                type: 'GET',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                complete: function(response) {
+                    if (response.responseJSON == true) {
+                        var url = "/Cart/OrderCompleted";
+                        $(location).attr('href',url);
+                    }
+                    // else{
+                    var url = "/Cart/OrderCompleted";
+                    $(location).attr('href',url);
+                    }
+                });
+      }
+</script>

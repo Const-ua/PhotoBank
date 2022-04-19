@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PhotoBank</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PhotoBank.styles.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/fontawesome/css/all.css" />
+</head>
+<body>
+@*<header>*@
+<div class="wrapper">
+    <div id="content">
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3  fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PhotoBank</a>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LoginPartial"/>
+                    <ul class="navbar-nav flex-grow-1">
+                        @Html.Partial("CategoryMenu")
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" id="upload" asp-controller="Photo" asp-action="Create">Upload photo</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br/><br/><br/>
+        <div class="container  mb-4 pb-4">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+</div>
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2022 - PhotoBank - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
