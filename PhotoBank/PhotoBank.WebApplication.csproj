@@ -30,6 +30,10 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\fontawesome\" />
+    <Folder Include="wwwroot\images\Tmp\" />
+    <Folder Include="wwwroot\js\Views\Home\" />
+    <Folder Include="wwwroot\js\Views\Account\" />
+    <Folder Include="wwwroot\js\Views\Roles\" />
   </ItemGroup>
 
   <ItemGroup>

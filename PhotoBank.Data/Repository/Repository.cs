@@ -116,9 +116,18 @@ namespace PhotoBank.Data.Repository
             return false;
         }
 
-        public void Save()
+        public bool Save()
         {
-            _db.SaveChanges();
+            try
+            {
+                _db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString());
+                return false;
+            }
         }
     }
 }

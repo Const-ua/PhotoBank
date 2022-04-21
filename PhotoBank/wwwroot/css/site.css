@@ -3,6 +3,10 @@
     padding-bottom: 20px;
 }*/
 
+[v-cloak] {
+    display: none;
+}
+
 html {
     position: relative;
     min-height: 100%;

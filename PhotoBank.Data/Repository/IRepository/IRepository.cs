@@ -18,6 +18,6 @@ namespace PhotoBank.Data.Repository
         bool Add(T item);
         bool Remove(T item);
         bool Update(T item);
-        void Save();
+        bool Save();
     }
 }
